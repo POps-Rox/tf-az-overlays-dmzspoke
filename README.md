@@ -35,7 +35,7 @@ provider "azurerm" {
 }
 
 module "overlays-dmz-spoke" {
-  source  = "azurenoops/overlays-dmz-spoke/azurerm"
+  source  = "POps-Rox/tf-az-overlays-dmz-spoke/azurerm"
   version = "1.0.0"
   
   location = "usgovvirginia"
@@ -106,7 +106,7 @@ data "azurerm_log_analytics_workspace" "hub-logws" {
 }
 
 module "vnet-wl-spoke" {
-  source  = "azurenoops/overlays-dmz-spoke/azurerm"
+  source  = "POps-Rox/tf-az-overlays-dmz-spoke/azurerm"
   version = "2.0.0"
 
   # By default, this module will create a resource group, provide the name here
@@ -190,7 +190,7 @@ You can configure this module to enable any or all of the following service endp
 
 ```hcl
 module "vnet-spoke" {
-  source  = "azurenoops/overlays-dmz-spoke/azurerm"
+  source  = "POps-Rox/tf-az-overlays-dmz-spoke/azurerm"
   version = "x.x.x"
 
   # .... omitted
@@ -218,7 +218,7 @@ This module supports enabling service delegation into a specific subnet under th
 
 ```hcl
 module "vnet-spoke" {
-  source  = "azurenoops/overlays-dmz-spoke/azurerm"
+  source  = "POps-Rox/tf-az-overlays-dmz-spoke/azurerm"
   version = "x.x.x"
 
   # .... omitted
@@ -252,7 +252,7 @@ This module can Enable or Disable network policies for the private link endpoint
 
 ```hcl
 module "vnet-spoke" {
-  source  = "azurenoops/overlays-dmz-spoke/azurerm"
+  source  = "POps-Rox/tf-az-overlays-dmz-spoke/azurerm"
   version = "x.x.x"
 
   # .... omitted
@@ -282,7 +282,7 @@ This module can Enable or Disable network policies for the private link service 
 
 ```hcl
 module "vnet-spoke" {
-  source  = "azurenoops/overlays-dmz-spoke/azurerm"
+  source  = "POps-Rox/tf-az-overlays-dmz-spoke/azurerm"
   version = "x.x.x"
 
   # .... omitted
@@ -315,7 +315,7 @@ The presence of the `nsg_subnet_rules` block is optional, but an NSG with defaul
 ### Create a subnet with an NSG and default rules by omitting the `nsg_subnet_rules` block
 ``` hcl
 module "vnet-spoke" {
-  source  = "azurenoops/overlays-dmz-spoke/azurerm"
+  source  = "POps-Rox/tf-az-overlays-dmz-spoke/azurerm"
   version = "x.x.x"
 
   # .... omitted
@@ -335,7 +335,7 @@ module "vnet-spoke" {
 *You cannot remove the default rules, but you can override them by creating rules with higher priorities.*
 ``` hcl
 module "vnet-spoke" {
-  source  = "azurenoops/overlays-dmz-spoke/azurerm"
+  source  = "POps-Rox/tf-az-overlays-dmz-spoke/azurerm"
   version = "x.x.x"
 
   # .... omitted
@@ -355,7 +355,7 @@ module "vnet-spoke" {
 *You cannot remove the default rules, but you can override them by creating rules with higher priorities.*
 ``` hcl
 module "vnet-spoke" {
-  source  = "azurenoops/overlays-dmz-spoke/azurerm"
+  source  = "POps-Rox/tf-az-overlays-dmz-spoke/azurerm"
   version = "x.x.x"
 
   # .... omitted
