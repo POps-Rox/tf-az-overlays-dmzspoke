@@ -2,10 +2,10 @@
 # Licensed under the MIT License.
 
 resource "azurerm_network_security_group" "nsg" {
- for_each                  = var.spoke_subnets
+  for_each = var.spoke_subnets
   //This basically check to see if the user has defined the nsg_subnet_rules block for each
   //  subnet variable and if one is found then make an NSG for that subnet.
- /*  for_each = {
+  /*  for_each = {
     for subnet, values in var.spoke_subnets : 
         subnet => values if values.nsg_subnet_rules != null
   } */
@@ -45,10 +45,10 @@ resource "azurerm_network_security_group" "nsg" {
 }
 
 resource "azurerm_subnet_network_security_group_association" "nsgassoc" {
-for_each                  = var.spoke_subnets
+  for_each = var.spoke_subnets
   //This basically check to see if the user has defined the nsg_subnet_rules block for each
   //  subnet variable and if one is found then make an NSG association between the NSG and subnet.
-/*   for_each = {
+  /*   for_each = {
     for subnet, values in var.spoke_subnets : 
         subnet => values if values.nsg_subnet_rules != null
   } */

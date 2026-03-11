@@ -31,7 +31,7 @@ resource "azurerm_virtual_network_peering" "hub_to_spoke" {
 }
 
 
-resource "time_sleep" "wait_for_subnets"{
-  depends_on = [azurerm_subnet.default_snet, data.azurerm_virtual_network.hub_vnet]
+resource "time_sleep" "wait_for_subnets" {
+  depends_on      = [azurerm_subnet.default_snet, data.azurerm_virtual_network.hub_vnet]
   create_duration = "60s"
 }

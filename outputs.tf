@@ -64,7 +64,7 @@ output "network_security_group_ids" {
   value = { for key, id in zipmap(
     sort(keys(var.spoke_subnets)),
     sort(values(azurerm_network_security_group.nsg)[*]["id"])) :
-  key => { key = key, id = id }  }
+  key => { key = key, id = id } }
 }
 
 output "network_security_group_names" {
@@ -75,7 +75,7 @@ output "network_security_group_names" {
   key => { key = key, name = name } }
 }
 
- 
+
 # DDoS Protection Plan
 output "ddos_protection_plan_id" {
   description = "Ddos protection plan details"
@@ -89,12 +89,12 @@ output "network_watcher_id" {
 
 output "private_dns_zone_names" {
   description = "The name of the Private DNS zones within Azure DNS"
-  value       = [for s in module.mod_pdz : s.private_dns_zone_name] 
+  value       = [for s in module.mod_pdz : s.private_dns_zone_name]
 }
 
 output "private_dns_zone_ids" {
   description = "The resource id of Private DNS zones within Azure DNS"
-  value       = [for s in module.mod_pdz : s.private_dns_zone_id] 
+  value       = [for s in module.mod_pdz : s.private_dns_zone_id]
 }
 
 output "storage_account_id" {

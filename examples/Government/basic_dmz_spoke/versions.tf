@@ -7,7 +7,7 @@ terraform {
     azurerm = {
       source  = "hashicorp/azurerm"
       version = "~> 3.36"
-    }    
+    }
   }
 }
 
@@ -18,6 +18,6 @@ provider "azurerm" {
 
 provider "azurerm" {
   features {}
-  alias = "hub"
+  alias                      = "hub"
   skip_provider_registration = true
 }
