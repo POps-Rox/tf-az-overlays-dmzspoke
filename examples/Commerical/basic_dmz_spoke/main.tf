@@ -1,6 +1,6 @@
 
 module "mod_vnet_spoke" {
-  #source  = "azurenoops/overlays-dmz-spoke/azurerm"
+  #source  = "github.com/POps-Rox/tf-az-overlays-dmzspoke"
   #version = "~> x.x.x"
   source = "../../.."
   providers = {
